@@ -200,10 +200,6 @@ Ngoài ra, khi hai vật thể chồng lên nhau, bounding box chồng nhau khô
 
 `ảnh thô → guideline → ground truth → huấn luyện → prediction → QC/rework`
 
-## 4. Vòng đời và kiểm tra chất lượng
-
-`ảnh thô → guideline → ground truth → huấn luyện → prediction → QC/rework`
-
 | Tác vụ | Đơn vị/định dạng ground truth | Lỗi hoặc điểm mơ hồ quan sát được | Annotator làm gì? | Reviewer xem gì? |
 | --- | --- | --- | --- | --- |
 | Phân loại ảnh | Một nhãn lớp duy nhất (`class_id` + `class_name` + `taxonomy_name`) cho toàn ảnh | Ảnh `traffic` có nhiều loại xe — model dự đoán `cab` (score 0.51) nhưng xe buýt chiếm diện tích lớn hơn; không rõ chọn lớp nào nếu thiếu guideline | Đọc guideline xác định tiêu chí chọn chủ thể chính; chọn đúng một lớp; ghi chú "ambiguous" và escalate nếu không chắc | Kiểm tra nhãn có đúng chủ thể nổi bật nhất theo guideline không; nếu có "ambiguous" thì quyết định hoặc escalate lên lead |
